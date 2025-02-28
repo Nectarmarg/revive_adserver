@@ -1,0 +1,59 @@
+1)Να φτιάξω ένα  folder στο xampp
+
+2)Να διαβάσω το documentation του adserver
+
+3)Να δω προσεκτικά όλες τις οντότητες του adserver
+	3.1)Να κάνω ένα απλό παράδειγμα για να συνηθίσω το API
+
+4)Να φτιάξω αρχεία PHP μέσα στο φάκελο όπου κάθε αρχείο να χτυπάει μια οντότητα και να κάνει(CRUD)
+
+5)Να φτιάξω ένα word σχετικά με τις οδηγίες χρήσης(Μπορεί να υπάρχουν ορισμένες ιδιοτροπίες)
+
+API Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0Nzk4MjIsImV4cCI6MTc3MjAxNTgyMiwic3ViIjoicm9vdCJ9.2uwDHl7f-ARMFCWbEGzE12Af7I3Kq2uL-p3l_XvrSDs
+
+Οντότητες:
+
+--Agency: Ένα user_account
+
+--Advertiser
+
+--Campaign
+
+--Banner
+
+--Website
+
+--Zone
+
+--Deal Propertie
+
+--Delivery Rule Set
+
+
+Notes:
+
+Για να καλεσθεί η μέθοδος advertiser_add
+πρέπει να περασθούν στο body τα παρακάτω στοιχεία
+
+//Correct example
+{
+"clientname":"Test_12",
+"contact":"3534533",
+"email":"admin@gmail.com",
+"report":"t",
+"reportinterval":"7",
+"reportdeactivate":"t",
+"comments":"comments till ",
+"advertiser_limitation":"1"
+}
+
+
+//Wrong example
+{"contactname":"Advertiser","email
+":"advertiser@dreamajax.com","user
+name":"advertiser05
+","password":"123456","clientname"
+:"advertiser","report":"t","reportinter
+val":"7","reportdeactivate":"t","com
+ments":"comments till revive",
+"advertiser_limitation":"1"}
