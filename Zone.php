@@ -1,14 +1,11 @@
 <?php
-
-// Add Publisher *************
-function add_publisher($agency_id)
+// Add zone
+function add_zone($publisher_id)
 {
-
-
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/add_publisher/$agency_id",
+    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/add_zone/$publisher_id",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -17,16 +14,19 @@ function add_publisher($agency_id)
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
     CURLOPT_POSTFIELDS => '{
-    "name":"publisher",
-    "contact":"4242344",
-    "email":"publisher.s@gmail.com",
-    "website":"http://www.testgoogle.com"
+    "zonename": "zone 1",
+    "description": "html banner",
+    "delivery":1,
+    "width": 300,
+    "height": 250,
+    "comments": "test",
+    "category":"category_name"
 }
 ',
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
-      'Cookie: PHPSESSID=vvmqfagrip9mqfnqnccfs7lpgv'
+      'Cookie: PHPSESSID=flrtpbe7anrehs3j6o7no3bhqi'
     ),
   ));
 
@@ -36,13 +36,13 @@ function add_publisher($agency_id)
   echo $response;
 }
 
-// Edit Publisher
-function edit_publisher($publisher_id)
+// Edit zone
+function edit_zone($zone_id)
 {
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/edit_publisher/$publisher_id",
+    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/edit_zone/$zone_id",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -51,17 +51,20 @@ function edit_publisher($publisher_id)
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
     CURLOPT_POSTFIELDS => '{
-    "name":"publisher",
-    "contact":"4242344",
-    "email":"publisher.s@gmail.com",
-    "website":"http://www.testgoogle.com",
-    "mode":"edit"
-
-}',
+  "zonename": "zone 1",
+  "description": "html banner",
+  "delivery":1,
+  "width": 300,
+  "height": 250,
+  "comments": "test",
+  "category":"category_name",
+  "mode":"edit"
+  }
+',
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
-      'Cookie: PHPSESSID=vvmqfagrip9mqfnqnccfs7lpgv'
+      'Cookie: PHPSESSID=flrtpbe7anrehs3j6o7no3bhqi'
     ),
   ));
 
@@ -71,13 +74,13 @@ function edit_publisher($publisher_id)
   echo $response;
 }
 
-// Delete Publisher
-function delete_publisher($publisher_id)
+// Delete zone
+function delete_zone($zone_id)
 {
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/delete_publisher/$publisher_id",
+    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/delete_zone/$zone_id",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -86,15 +89,20 @@ function delete_publisher($publisher_id)
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'DELETE',
     CURLOPT_POSTFIELDS => '{
-    "name":"publisher",
-    "contact":"4242344",
-    "email":"publisher.s@gmail.com",
-    "website":"http://www.testgoogle.com"
-}',
+  "zonename": "zone 1",
+  "description": "html banner",
+  "delivery":1,
+  "width": 300,
+  "height": 250,
+  "comments": "test",
+  "category":"category_name",
+  "mode":"edit"
+  }
+  ',
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
-      'Cookie: PHPSESSID=vvmqfagrip9mqfnqnccfs7lpgv'
+      'Cookie: PHPSESSID=flrtpbe7anrehs3j6o7no3bhqi'
     ),
   ));
 
@@ -104,13 +112,13 @@ function delete_publisher($publisher_id)
   echo $response;
 }
 
-// Get Publisher Details
-function getpublisherdetails($publisher_id)
+// Get zone
+function get_zone($zone_id)
 {
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/getpublisherdetails/$publisher_id",
+    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/get_zone/$zone_id",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -118,16 +126,10 @@ function getpublisherdetails($publisher_id)
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'GET',
-    CURLOPT_POSTFIELDS => '{
-    "name":"publisher",
-    "contact":"4242344",
-    "email":"publisher.s@gmail.com",
-    "website":"http://www.testgoogle.com"
-}',
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
-      'Cookie: PHPSESSID=rtssam93d0u4ejjbhv9qc24s9p'
+      'Cookie: PHPSESSID=flrtpbe7anrehs3j6o7no3bhqi'
     ),
   ));
 
@@ -137,13 +139,13 @@ function getpublisherdetails($publisher_id)
   echo $response;
 }
 
-// Get All Publishers
-function getallpublisher($agency_id)
+// Get all zones
+function get_all_zone($affiliate_id)
 {
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/getallpublisher/$agency_id",
+    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/get_all_zone/$affiliate_id",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -152,15 +154,20 @@ function getallpublisher($agency_id)
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'GET',
     CURLOPT_POSTFIELDS => '{
-    "name":"publisher",
-    "contact":"4242344",
-    "email":"publisher.s@gmail.com",
-    "website":"http://www.testgoogle.com"
-}',
+  "zonename": "zone 1",
+  "description": "html banner",
+  "delivery":1,
+  "width": 300,
+  "height": 250,
+  "comments": "test",
+  "category":"category_name",
+  "mode":"edit"
+  }
+  ',
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
-      'Cookie: PHPSESSID=rtssam93d0u4ejjbhv9qc24s9p'
+      'Cookie: PHPSESSID=uklueou20th8ae6meesm7prl73'
     ),
   ));
 
