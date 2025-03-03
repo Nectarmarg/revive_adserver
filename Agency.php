@@ -22,7 +22,7 @@ function add_agency()
         }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=hpggolastnffma0s9hru28iq62'
         ),
     ));
@@ -58,7 +58,7 @@ function agency_edit($agency_id)
         ',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=hpggolastnffma0s9hru28iq62'
         ),
     ));
@@ -112,7 +112,7 @@ function get_agency($agency_id)
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'GET',
         CURLOPT_HTTPHEADER => array(
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=hpggolastnffma0s9hru28iq62'
         ),
     ));

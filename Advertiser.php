@@ -28,7 +28,7 @@ function advertiser_add($agency_id)
         }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=umf5s4cvrqsi5rkla5vb5nphnt'
         ),
     ));
@@ -94,7 +94,7 @@ function advertiser_delete($advertiser_id)
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'DELETE',
         CURLOPT_HTTPHEADER => array(
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=umf5s4cvrqsi5rkla5vb5nphnt'
         ),
     ));
@@ -121,7 +121,7 @@ function get_advertiser($advertiser_id)
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'GET',
         CURLOPT_HTTPHEADER => array(
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=umf5s4cvrqsi5rkla5vb5nphnt'
         ),
     ));

@@ -37,7 +37,7 @@ function add_banner($campaign_id)
         ',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=7d26gjk40hn2nus2fd39ehgnpr'
         ),
     ));
@@ -86,7 +86,7 @@ function edit_banner($banner_id)
         ',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=7d26gjk40hn2nus2fd39ehgnpr'
         ),
     ));
@@ -136,7 +136,7 @@ function delete_banner($banner_id)
         ',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=7d26gjk40hn2nus2fd39ehgnpr'
         ),
     ));
@@ -186,7 +186,7 @@ function get_banner($banner_id)
         ',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=7d26gjk40hn2nus2fd39ehgnpr'
         ),
     ));
@@ -234,7 +234,7 @@ function get_all_banner($campaign_id)
         ',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=7d26gjk40hn2nus2fd39ehgnpr'
         ),
     ));
@@ -260,7 +260,7 @@ function set_limitation($banner_id)
 ',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=7d26gjk40hn2nus2fd39ehgnpr'
         ),
     ));
@@ -289,7 +289,7 @@ function get_limitation($banner_id)
 ',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=7d26gjk40hn2nus2fd39ehgnpr'
         ),
     ));
@@ -318,7 +318,7 @@ function deletebanner_all_limitation($banner_id)
 ',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: ••••••',
+            'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
             'Cookie: PHPSESSID=7d26gjk40hn2nus2fd39ehgnpr'
         ),
     ));
