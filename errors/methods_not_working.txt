@@ -1,61 +1,54 @@
 
-//add_publisher
+//campaignbyzone_link
 
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/add_publisher/1 
-
-body_data:{
-    "name":"publisher",
-    "contact":"4242344",
-    "email":"publisher.s@gmail.com",
-    "website":"http://www.testgoogle.com"
-}
-
-response:{
-    "response": "error",
-    "message": "Please check with input parameters",
-    "status": "404"
-}
-
-
-
-
-//adbyzone_link
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/adbyzone_link/13 
+endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/campaignbyzone_link/2
 
 body_data:{
-    "bannerid":"20"
+    "campaignid":"2"
 }
 
-response:{
-    "response": "error",
+response:
+	{
+    "response": "Error",
     "message": "Width and height doesnot match for banner and zone",
     "status": "404"
 }
 
 
 
+//campaignbyzone_unlink
+
+endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/campaignbyzone_unlink/2
+
+body_data:{
+    "campaignid":"2"
+}
+
+response:
+	{
+    "response": "Success",
+    "message": "Campaigns unlinked successfully!",
+    "status": "404"
+}
+
+
+
+||
+
+
+
+
 //campaignbyzone_link
 
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/campaignbyzone_link/13 
+endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/campaignbyzone_link/5
 
 body_data:{
-    "campaignid":"20"
+    "campaignid":"5"
 }
 
-response:{}
-
-
-
-//zonebyad_link
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/zonebyad_link/1 
-
-body_data:{
-    "zoneid":"1"
-}
-
-response:{
+response:
+	
+    {
     "response": "Error",
     "message": "Type doesnot match for banner and zone",
     "status": "404"
@@ -65,250 +58,15 @@ response:{
 
 //campaignbyzone_unlink
 
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/campaignbyzone_unlink/1 
+endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/campaignbyzone_unlink/5
 
 body_data:{
-    "campaignid":"1"
+    "campaignid":"5"
 }
 
-response:{
+response:
+	{
     "response": "Error",
     "message": "Campaigns not linked!",
     "status": "404"
 }
-
-
-//zonebyad_unlink
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/zonebyad_unlink/1 
-
-body_data:{
-    "zoneid":"1"
-}
-
-response:{
-    "response": "error",
-    "message": "Zones not linked !",
-    "status": "404"
-}
-
-
-
-//zonebycampaign_unlink
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/zonebycampaign_unlink/1 
-
-body_data:{
-    "zoneid":"1"
-}
-
-response:{
-    "response": "error",
-    "message": "Zones not linked !",
-    "status": "404"
-}
-
-
-//get_linked_banners
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/get_linked_banners/1 
-
-response:{
-    "response": "error",
-    "message": "There is no linked Banners",
-    "status": "404"
-}
-
-
-//get_campaign_linked_zones
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/get_campaign_linked_zones/1 
-
-
-response:{
-    "response": "error",
-    "message": "There is no linked Banners",
-    "status": "404"
-}
-
-
-//get_linked_zones
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/get_linked_zones/1 
-
-
-response:{
-    "response": "error",
-    "message": "There is no linked Zones",
-    "status": "404"
-}
-
-
-//get_linked_campaigns
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/get_linked_campaigns/1 
-
-
-response:{
-    "response": "error",
-    "message": "There is no linked Banners",
-    "status": "404"
-}
-
-//edit_user
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/edit_user/1 
-
-response:{
-        <html>
-
-            <head>
-                <title>Page Not Found</title>
-                <style>
-                    body {
-                        margin: 0;
-                        padding: 30px;
-                        font: 12px/1.5 Helvetica, Arial, Verdana, sans-serif;
-                    }
-
-                    h1 {
-                        margin: 0;
-                        font-size: 48px;
-                        font-weight: normal;
-                        line-height: 48px;
-                    }
-
-                    strong {
-                        display: inline-block;
-                        width: 65px;
-                    }
-                </style>
-            </head>
-
-            <body>
-                <h1>Page Not Found</h1>
-                <p>
-                    The page you are looking for could not be found. Check the address bar
-                    to ensure your URL is spelled correctly. If all else fails, you can
-                    visit our home page at the link below.
-                </p>
-                <a href='https://adserver.brainfoodhosting.gr/api/revive_ui/'>Visit the Home Page</a>
-            </body>
-
-            </html>
-}
-
-
-//get_all_user
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/get_all_user/1 
-
-
-response:""
-
-
-
-//forget_password
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/forget_password
-
-body_data:{
-    "email_address": "test@gmail.com"
-}
-
-response:{          <html>
-
-
-                                    <head>
-                                        <title>Page Not Found</title>
-                                        <style>
-                                            body {
-                                                margin: 0;
-                                                padding: 30px;
-                                                font: 12px/1.5 Helvetica, Arial, Verdana, sans-serif;
-                                            }
-
-                                            h1 {
-                                                margin: 0;
-                                                font-size: 48px;
-                                                font-weight: normal;
-                                                line-height: 48px;
-                                            }
-
-                                            strong {
-                                                display: inline-block;
-                                                width: 65px;
-                                            }
-                                        </style>
-                                    </head>
-
-                                    <body>
-                                        <h1>Page Not Found</h1>
-                                        <p>
-                                            The page you are looking for could not be found. Check the address bar
-                                            to ensure your URL is spelled correctly. If all else fails, you can
-                                            visit our home page at the link below.
-                                        </p>
-                                        <a href='https://adserver.brainfoodhosting.gr/api/revive_ui/'>Visit the Home Page</a>
-                                    </body>
-
-                        </html>
-                        }
-
-
-
-
-//edit_tracker
-
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/edit_tracker/3 
-
-
-body_data:{
-    "trackername":"tracker",
-    "description":"",
-    "status":"4",
-    "type":"1",
-    "appendcode":"http://182.72.85.3/djaxtesting/restapirevive/api/test/test.php",
-    "linkcampaigns":"t",
-    "mode":"edit"
-}
-
-
-
-response:{
-    "response": "error",
-    "message": "Please check with input parameters",
-    "status": "404"
-}
-
-
-
-
-
-
-
-//invoke_asy
-
-
-endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/invoke_asy/17 
-
-
-body_data:{
-    "thirdparty":"3",
-    "showpage":"1",
-    "show":"2",
-    "source":"message content",
-    "target":"1"
-    }
-
-
-
-
-response:{"async":"<ins data-revive-zoneid="17" data-revive-target="_blank"
-    data-revive-id="5cd0105c73fe5cd9ab871d044bffb41a"></ins>
-<script async src="//adserver.brainfoodhosting.gr/www/delivery/asyncjs.php"></script>"}
-
-
-
-
