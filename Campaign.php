@@ -39,7 +39,7 @@
         "hosted_clicks":"5",
         "min_impressions":"5" ,
         "start_date":"2017-02-1918:30:00",
-        "end_date":"2017-12-2918:30:00",
+        "end_date":"2025-12-2918:30:00",
         "show_capped_no_cookie":"0"
         
         }',
@@ -53,7 +53,15 @@
         $response = curl_exec($curl);
 
         curl_close($curl);
+        $responseData = json_decode($response);
+
+        // Retrieve the campaign id using regex
+        if (isset($responseData->message)) {
+            preg_match("/(\d+)/", $responseData->message, $matches);
+            $campaign_id = $matches[1] ?? null;
+        }
         echo $response;
+        return $campaign_id;
     }
 
     // Edit Campaign

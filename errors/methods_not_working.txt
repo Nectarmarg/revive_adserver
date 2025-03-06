@@ -1,4 +1,12 @@
 
+There are two possible cases.
+
+1)campaignbyzone_link endpoint will return an error but the campaignbyzone_unlink will work
+
+2)campaignbyzone_link endpoint will return an error but the campaignbyzone_unlink will NOT work
+
+
+
 //campaignbyzone_link
 
 endpoint: https://adserver.brainfoodhosting.gr/api/revive_ui/campaignbyzone_link/2

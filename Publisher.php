@@ -18,7 +18,7 @@ function add_publisher($agency_id)
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => '{
     "ad_type":"3",
-    "name":"publisher333",
+    "name":"Example_publisher",
     "contact":"4242344",
     "email":"publisher.s@gmail.com",
     "website":"http://www.testgoogle.com"
@@ -34,7 +34,15 @@ function add_publisher($agency_id)
     $response = curl_exec($curl);
 
     curl_close($curl);
+    $responseData = json_decode($response);
+
+    // retrieve the id using regex
+    if (isset($responseData->message)) {
+        preg_match("/(\d+)/", $responseData->message, $matches);
+        $publisher_id=$matches[1] ?? null;
+    }
     echo $response;
+    return $publisher_id;
 }
 
 // Edit Publisher

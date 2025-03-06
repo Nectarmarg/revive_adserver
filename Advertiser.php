@@ -17,7 +17,7 @@ function advertiser_add($agency_id)
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => '{
-        "clientname":"Test_Advertiser",
+        "clientname":"Example_Advertiser",
         "contact":"3534533",
         "email":"admin@gmail.com",
         "report":"t",
@@ -36,7 +36,15 @@ function advertiser_add($agency_id)
     $response = curl_exec($curl);
 
     curl_close($curl);
+    $responseData = json_decode($response);
+
+    // Extract id using regex
+    if (isset($responseData->message)) {
+        preg_match("/(\d+)/", $responseData->message, $matches);
+        $advertiser_id = $matches[1] ?? null;
+    }
     echo $response;
+    return $advertiser_id;
 }
 
 // Edit advertiser
