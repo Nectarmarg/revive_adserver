@@ -46,6 +46,14 @@ function add_banner($campaign_id)
 
     curl_close($curl);
     echo $response;
+
+    $responseData = json_decode($response);
+
+    if (isset($responseData->message)) {
+        preg_match("/(\d+)/", $responseData->message, $matches);
+        $response_id = $matches[1] ?? null;
+    }
+    return $response_id;
 }
 
 // Edit Banner

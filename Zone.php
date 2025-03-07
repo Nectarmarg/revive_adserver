@@ -17,8 +17,8 @@ function add_zone($publisher_id)
     "zonename": "zone 1",
     "description": "html banner",
     "delivery":1,
-    "width": 300,
-    "height": 250,
+    "width": 640,
+    "height": 640,
     "comments": "test",
     "category":"category_name"
 }
@@ -34,6 +34,14 @@ function add_zone($publisher_id)
 
   curl_close($curl);
   echo $response;
+
+  $responseData = json_decode($response);
+
+  if (isset($responseData->message)) {
+    preg_match("/(\d+)/", $responseData->message, $matches);
+    $zone_id = $matches[1] ?? null;
+  }
+  return $zone_id;
 }
 
 // Edit zone

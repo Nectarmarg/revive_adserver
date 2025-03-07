@@ -1,6 +1,6 @@
 <?php
 // Link by ad and zone 
-function adbyzone_link($zone_id)
+function adbyzone_link($zone_id, $banner_id)
 {
   $curl = curl_init();
 
@@ -13,9 +13,7 @@ function adbyzone_link($zone_id)
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => '{
-    "bannerid":"41"
-}',
+    CURLOPT_POSTFIELDS => json_encode(["bannerid" => $banner_id]), // Dynamically set bannerid
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
@@ -24,8 +22,8 @@ function adbyzone_link($zone_id)
   ));
 
   $response = curl_exec($curl);
-
   curl_close($curl);
+
   echo $response;
 }
 
