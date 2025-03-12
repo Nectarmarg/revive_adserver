@@ -60,7 +60,7 @@
             preg_match("/(\d+)/", $responseData->message, $matches);
             $campaign_id = $matches[1] ?? null;
         }
-        echo $response;
+        // echo $response;
         return $campaign_id;
     }
 

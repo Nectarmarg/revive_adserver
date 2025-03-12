@@ -41,7 +41,7 @@ function add_publisher($agency_id)
         preg_match("/(\d+)/", $responseData->message, $matches);
         $publisher_id=$matches[1] ?? null;
     }
-    echo $response;
+    // echo $response;
     return $publisher_id;
 }
 

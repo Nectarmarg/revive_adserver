@@ -43,7 +43,7 @@ function advertiser_add($agency_id)
         preg_match("/(\d+)/", $responseData->message, $matches);
         $advertiser_id = $matches[1] ?? null;
     }
-    echo $response;
+    // echo $response;
     return $advertiser_id;
 }
 
