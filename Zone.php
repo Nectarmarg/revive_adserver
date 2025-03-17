@@ -16,7 +16,7 @@ function add_zone($publisher_id)
     CURLOPT_POSTFIELDS => '{
     "zonename": "zone 1",
     "description": "html banner",
-    "delivery":1,
+    "delivery":6,
     "width": 640,
     "height": 640,
     "comments": "test",
@@ -37,6 +37,7 @@ function add_zone($publisher_id)
 
   $responseData = json_decode($response);
 
+  // get zone id via the response message
   if (isset($responseData->message)) {
     preg_match("/(\d+)/", $responseData->message, $matches);
     $zone_id = $matches[1] ?? null;
