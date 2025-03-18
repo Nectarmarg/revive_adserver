@@ -39,7 +39,7 @@ function add_publisher($agency_id)
     // retrieve the id using regex
     if (isset($responseData->message)) {
         preg_match("/(\d+)/", $responseData->message, $matches);
-        $publisher_id=$matches[1] ?? null;
+        $publisher_id = $matches[1] ?? null;
     }
     // echo $response;
     return $publisher_id;
@@ -60,6 +60,7 @@ function edit_publisher($publisher_id)
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => '{
+    "ad_type":"3",
     "name":"publisher",
     "contact":"4242344",
     "email":"publisher.s@gmail.com",

@@ -22,5 +22,5 @@ function invoke_javascript($zone_id)
     $response = curl_exec($curl);
 
     curl_close($curl);
-    echo $response;
+    // echo $response;
 }

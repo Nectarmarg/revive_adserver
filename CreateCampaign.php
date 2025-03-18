@@ -31,3 +31,6 @@ adbyzone_link($zone_id, $banner_id);
 
 // 7)Echo the invocation code
 invoke_javascript($zone_id);
+
+// 8)Echo the VAST Incovation Code
+echo "https://adserver.brainfoodhosting.gr:9095/video?zoneid={$zone_id}";
