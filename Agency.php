@@ -1,6 +1,10 @@
 <?php
 
-// Add Agency
+/**  
+ * Add Agency and echo the response
+ * @return void
+ */
+
 function add_agency()
 {
 
@@ -15,10 +19,12 @@ function add_agency()
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => '{"name":"5",
-        "contact":"adsfs",
-        "email":"agency@dreamajax.com",
-        "status":"0"
+        CURLOPT_POSTFIELDS => '
+        {
+            "name":"5",
+            "contact":"adsfs",
+            "email":"agency@dreamajax.com",
+            "status":"0"
         }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
@@ -33,7 +39,13 @@ function add_agency()
     echo $response;
 }
 
-// Update Agency
+
+/**  
+ * Update Agency and echo the response
+ * @param int $agency_id The ID of the agency to be updated.
+ * @return void
+ */
+
 function agency_edit($agency_id)
 {
 
@@ -69,7 +81,12 @@ function agency_edit($agency_id)
     echo $response;
 }
 
-// Delete Agency
+/**  
+ * Delete Agency and echo the response
+ * @param int $agency_id The ID of the agency to be deleted.
+ * @return void
+ */
+
 function agency_delete($agency_id)
 {
     $curl = curl_init();
@@ -95,7 +112,12 @@ function agency_delete($agency_id)
     echo $response;
 }
 
-// Get a single agency
+/**  
+ * Get Agency and echo the response
+ * @param int $agency_id The ID of the agency to be echoed.
+ * @return void
+ */
+
 function get_agency($agency_id)
 {
 
@@ -123,8 +145,13 @@ function get_agency($agency_id)
     echo $response;
 }
 
-// Get all agencies
-// NOTE: If the id is not 1 an error will be returned.
+/** 
+ * Get all agencies and echo the response
+ * 
+ * NOTE: The id is always 1.
+ * 
+ * NOTE: If the id is not 1 an error will be returned.*/
+
 function get_all_agency()
 {
 

@@ -1,6 +1,10 @@
- <?php
+<?php
 
-    //  Add Campaign
+    /**
+     * Adds campaign inside the Advertiser
+     * @param int $advertiser_id
+     * @return int The id of the campaign added
+     */
     function campaign_add($advertiser_id)
     {
 
@@ -60,11 +64,15 @@
             preg_match("/(\d+)/", $responseData->message, $matches);
             $campaign_id = $matches[1] ?? null;
         }
-        // echo $response;
+        
         return $campaign_id;
     }
 
-    // Edit Campaign
+    /**
+     * Edits an existing campaign
+     * @param int $campaign_id
+     * @return void
+     */
     function campaign_edit($campaign_id)
     {
 
@@ -119,7 +127,11 @@
         echo $response;
     }
 
-    // Delete Campaign
+    /**
+     * Deletes a campaign
+     * @param int $campaign_id
+     * @return void
+     */
     function campaign_delete($campaign_id)
     {
 
@@ -174,7 +186,11 @@
         echo $response;
     }
 
-    // Get single Campaign
+    /**
+     * Retrieves details of a single campaign
+     * @param int $campaign_id
+     * @return void
+     */
     function get_campaign($campaign_id)
     {
 
@@ -230,7 +246,11 @@
         echo $response;
     }
 
-    // Get all Campaigns(From a specific Advertiser)
+    /**
+     * Retrieves all campaigns for a specific advertiser
+     * @param int $advertiser_id
+     * @return void
+     */
     function get_all_campaigns($advertiser_id)
     {
 

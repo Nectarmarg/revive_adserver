@@ -1,6 +1,11 @@
 <?php
 
-// Add advertiser
+/**
+ * Adds advertiser inside the Agency
+ * @param int $agency_id
+ * @return int The id of the advertiser added
+ */
+
 function advertiser_add($agency_id)
 {
 
@@ -43,11 +48,15 @@ function advertiser_add($agency_id)
         preg_match("/(\d+)/", $responseData->message, $matches);
         $advertiser_id = $matches[1] ?? null;
     }
-    // echo $response;
     return $advertiser_id;
 }
 
-// Edit advertiser
+/**
+ * Edits advertiser based of the advertiser_id and echoes response
+ * @param int $advertiser_id
+ * @return void
+ * */
+
 function advertiser_edit($advertiser_id)
 {
 
@@ -86,7 +95,12 @@ function advertiser_edit($advertiser_id)
     echo $response;
 }
 
-// Delete advertiser
+/**
+ * Deletes advertiser based of the advertiser_id and echoes response
+ * @param int $advertiser_id
+ * @return void 
+ * */
+
 function advertiser_delete($advertiser_id)
 {
 
@@ -113,7 +127,11 @@ function advertiser_delete($advertiser_id)
     echo $response;
 }
 
-// Get single advertiser
+/**
+ * Gets advertiser based of the advertiser_id and echoes response
+ * @param int advertiser_id
+ * @return void */
+
 function get_advertiser($advertiser_id)
 {
 
@@ -140,10 +158,14 @@ function get_advertiser($advertiser_id)
     echo $response;
 }
 
-// Get all advertisers
+/**
+ *Get all existing advertisers in the agency and echoes response
+ *@param int $agency_id The ID of the agency to echo the advertisers.
+ *@return void
+ */
+
 function get_all_advertiser($agency_id)
 {
-
 
     $curl = curl_init();
 

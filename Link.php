@@ -24,11 +24,11 @@ function adbyzone_link($zone_id, $banner_id)
   $response = curl_exec($curl);
   curl_close($curl);
 
-  // echo $response;
+  echo $response;
 }
 
 // Link by campaign and zone *************
-function campaignbyzone_link($zone_id)
+function campaignbyzone_link($zone_id, $campaign_id)
 {
   $curl = curl_init();
 
@@ -41,9 +41,7 @@ function campaignbyzone_link($zone_id)
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => '{
-    "campaignid":"20"
-}',
+    CURLOPT_POSTFIELDS => json_encode(["campaignid" => $campaign_id]), // Dynamically set campaignid
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
@@ -58,7 +56,7 @@ function campaignbyzone_link($zone_id)
 }
 
 // Link by zone and ad
-function zonebyad_link($ad_id)
+function zonebyad_link($ad_id, $zone_id)
 {
   $curl = curl_init();
 
@@ -71,9 +69,7 @@ function zonebyad_link($ad_id)
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => '{
-    "zoneid":"2"
-}',
+    CURLOPT_POSTFIELDS => json_encode(["zoneid" => $zone_id]), // Dynamically set zoneid
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
@@ -87,7 +83,7 @@ function zonebyad_link($ad_id)
   echo $response;
 }
 // Link by zone and campaign
-function zonebycampaign_link($campaign_id)
+function zonebycampaign_link($campaign_id, $zone_id)
 {
   $curl = curl_init();
 
@@ -100,9 +96,7 @@ function zonebycampaign_link($campaign_id)
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => '{
-    "zoneid":"14"
-}',
+    CURLOPT_POSTFIELDS => json_encode(["zoneid" => $zone_id]), // Dynamically set zoneid
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
@@ -117,7 +111,7 @@ function zonebycampaign_link($campaign_id)
 }
 
 // Unlink by ad and zone 
-function adbyzone_unlink($zone_id)
+function adbyzone_unlink($zone_id, $banner_id)
 {
   $curl = curl_init();
 
@@ -130,9 +124,7 @@ function adbyzone_unlink($zone_id)
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => '{
-    "bannerid":"26"
-}',
+    CURLOPT_POSTFIELDS => json_encode(["bannerid" => $banner_id]), // Dynamically set bannerid
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
@@ -147,7 +139,7 @@ function adbyzone_unlink($zone_id)
 }
 
 // Unlink by zone and ad
-function zonebyad_unlink($ad_id)
+function zonebyad_unlink($ad_id, $zone_id)
 {
   $curl = curl_init();
 
@@ -160,9 +152,7 @@ function zonebyad_unlink($ad_id)
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => '{
-    "zoneid":"2"
-}',
+    CURLOPT_POSTFIELDS => json_encode(["zoneid" => $zone_id]), // Dynamically set zoneid
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',
@@ -177,7 +167,7 @@ function zonebyad_unlink($ad_id)
 }
 
 // Unlink by zone and campaign
-function zonebycampaign_unlink($ad_id)
+function zonebycampaign_unlink($ad_id, $zone_id)
 {
   $curl = curl_init();
 
@@ -190,7 +180,7 @@ function zonebycampaign_unlink($ad_id)
     CURLOPT_FOLLOWLOCATION => true,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => '{"zoneid":"2"}',
+    CURLOPT_POSTFIELDS => json_encode(["zoneid" => $zone_id]), // Dynamically set zoneid
     CURLOPT_HTTPHEADER => array(
       'Content-Type: application/json',
       'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDA0ODI5NTEsImV4cCI6MTc3MjAxODk1MSwic3ViIjoicm9vdCJ9.6_HPDypihtGZdweE_DN8yeP2t8sodvVCaUpAiqYrDw0',

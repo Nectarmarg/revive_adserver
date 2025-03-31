@@ -1,6 +1,12 @@
 <?php
 
-// Add Publisher
+/**
+ * Add Publisher inside the Agency
+ * Sends a POST request to add a publisher under a specific agency.
+ * 
+ * @param int $agency_id The ID of the agency to which the publisher will be added.
+ * @return int|null The ID of the publisher added, or null if not found in the response.
+ */
 function add_publisher($agency_id)
 {
 
@@ -41,11 +47,16 @@ function add_publisher($agency_id)
         preg_match("/(\d+)/", $responseData->message, $matches);
         $publisher_id = $matches[1] ?? null;
     }
-    // echo $response;
     return $publisher_id;
 }
 
-// Edit Publisher
+/**
+ * Edit Publisher
+ * Sends a POST request to edit the details of an existing publisher.
+ * 
+ * @param int $publisher_id The ID of the publisher to be edited.
+ * @return void Outputs the API response.
+ */
 function edit_publisher($publisher_id)
 {
     $curl = curl_init();
@@ -81,7 +92,13 @@ function edit_publisher($publisher_id)
     echo $response;
 }
 
-// Delete Publisher
+/**
+ * Delete Publisher
+ * Sends a DELETE request to remove a publisher by ID.
+ * 
+ * @param int $publisher_id The ID of the publisher to be deleted.
+ * @return void Outputs the API response.
+ */
 function delete_publisher($publisher_id)
 {
     $curl = curl_init();
@@ -114,7 +131,13 @@ function delete_publisher($publisher_id)
     echo $response;
 }
 
-// Get Publisher Details
+/**
+ * Get Publisher Details
+ * Sends a GET request to retrieve details of a specific publisher.
+ * 
+ * @param int $publisher_id The ID of the publisher whose details are to be fetched.
+ * @return void Outputs the API response.
+ */
 function getpublisherdetails($publisher_id)
 {
     $curl = curl_init();
@@ -147,7 +170,13 @@ function getpublisherdetails($publisher_id)
     echo $response;
 }
 
-// Get All Publishers
+/**
+ * Get All Publishers
+ * Sends a GET request to retrieve all publishers under a specific agency.
+ * 
+ * @param int $agency_id The ID of the agency whose publishers are to be fetched.
+ * @return void Outputs the API response.
+ */
 function getallpublisher($agency_id)
 {
     $curl = curl_init();

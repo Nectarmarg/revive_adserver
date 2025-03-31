@@ -1,5 +1,11 @@
 <?php
-// Add Banner
+
+/**
+ * Adds banner inside the Campaign
+ * @param int $campaign_id
+ * @return int The id of the banner added
+ */
+
 function add_banner($campaign_id)
 {
 
@@ -42,7 +48,6 @@ function add_banner($campaign_id)
     $response = curl_exec($curl);
 
     curl_close($curl);
-    // echo $response;
 
     $responseData = json_decode($response);
 
@@ -53,7 +58,10 @@ function add_banner($campaign_id)
     return $response_id;
 }
 
-// Edit Banner
+/**
+ * Edits an existing banner
+ * @param int $banner_id The id of the banner to edit
+ */
 function edit_banner($banner_id)
 {
 
@@ -102,7 +110,10 @@ function edit_banner($banner_id)
     echo $response;
 }
 
-// Delete Banner
+/**
+ * Deletes a banner
+ * @param int $banner_id The id of the banner to delete
+ */
 function delete_banner($banner_id)
 {
 
@@ -152,7 +163,10 @@ function delete_banner($banner_id)
     echo $response;
 }
 
-// Get single banner
+/**
+ * Retrieves a single banner
+ * @param int $banner_id The id of the banner to retrieve
+ */
 function get_banner($banner_id)
 {
 
@@ -202,7 +216,10 @@ function get_banner($banner_id)
     echo $response;
 }
 
-// Get all banners
+/**
+ * Retrieves all banners for a campaign
+ * @param int $campaign_id The id of the campaign to retrieve banners for
+ */
 function get_all_banner($campaign_id)
 {
     $curl = curl_init();
@@ -247,7 +264,10 @@ function get_all_banner($campaign_id)
     $response = curl_exec($curl);
 }
 
-// Set limitation
+/**
+ * Sets limitations for a banner
+ * @param int $banner_id The id of the banner to set limitations for
+ */
 function set_limitation($banner_id)
 {
     $curl = curl_init();
@@ -276,7 +296,10 @@ function set_limitation($banner_id)
     echo $response;
 }
 
-// Get limitation
+/**
+ * Retrieves limitations for a banner
+ * @param int $banner_id The id of the banner to retrieve limitations for
+ */
 function get_limitation($banner_id)
 {
     $curl = curl_init();
@@ -305,7 +328,10 @@ function get_limitation($banner_id)
     echo $response;
 }
 
-// Delete all limitations
+/**
+ * Deletes all limitations for a banner
+ * @param int $banner_id The id of the banner to delete all limitations for
+ */
 function deletebanner_all_limitation($banner_id)
 {
     $curl = curl_init();

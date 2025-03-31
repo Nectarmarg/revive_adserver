@@ -33,7 +33,6 @@ function add_zone($publisher_id)
   $response = curl_exec($curl);
 
   curl_close($curl);
-  // echo $response;
 
   $responseData = json_decode($response);
 
