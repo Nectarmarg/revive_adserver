@@ -1,5 +1,10 @@
 <?php
-// Add zone
+/**
+ * 
+ * Sends a POST request to add a zone under a specific publisher.
+ * @param int $publisher_id The ID of the publisher to which the zone will be added.
+ * @return int|null The ID of the zone added, or null if not found in the response.
+ */
 function add_zone($publisher_id)
 {
   $curl = curl_init();
@@ -44,7 +49,12 @@ function add_zone($publisher_id)
   return $zone_id;
 }
 
-// Edit zone
+/**
+ * 
+ * Sends a POST request to edit a specific zone.
+ * @param int $zone_id The ID of the zone to be edited.
+ * @return void Outputs the response from the API.
+ */
 function edit_zone($zone_id)
 {
   $curl = curl_init();
@@ -82,7 +92,12 @@ function edit_zone($zone_id)
   echo $response;
 }
 
-// Delete zone
+/**
+ * 
+ * Sends a DELETE request to remove a specific zone.
+ * @param int $zone_id The ID of the zone to be deleted.
+ * @return void Outputs the response from the API.
+ */
 function delete_zone($zone_id)
 {
   $curl = curl_init();
@@ -120,7 +135,12 @@ function delete_zone($zone_id)
   echo $response;
 }
 
-// Get zone
+/**
+ * 
+ * Sends a GET request to retrieve details of a specific zone.
+ * @param int $zone_id The ID of the zone to retrieve.
+ * @return void Outputs the response from the API.
+ */
 function get_zone($zone_id)
 {
   $curl = curl_init();
@@ -147,7 +167,12 @@ function get_zone($zone_id)
   echo $response;
 }
 
-// Get all zones
+/**
+ * 
+ * Sends a GET request to retrieve all zones under a specific affiliate.
+ * @param int $affiliate_id The ID of the affiliate whose zones will be retrieved.
+ * @return void Outputs the response from the API.
+ */
 function get_all_zone($affiliate_id)
 {
   $curl = curl_init();

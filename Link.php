@@ -1,5 +1,10 @@
 <?php
-// Link by ad and zone 
+/**
+ * Links a banner to a zone in the ad server.
+ * @param int $zone_id The ID of the zone to link the banner to.
+ * @param int $banner_id The ID of the banner to link to the zone.
+ * @return void Outputs the API response.
+ */
 function adbyzone_link($zone_id, $banner_id)
 {
   $curl = curl_init();
@@ -27,7 +32,12 @@ function adbyzone_link($zone_id, $banner_id)
   echo $response;
 }
 
-// Link by campaign and zone *************
+/**
+ * Links a campaign to a zone in the ad server.
+ * @param int $zone_id The ID of the zone to link the campaign to.
+ * @param int $campaign_id The ID of the campaign to link to the zone.
+ * @return void Outputs the API response.
+ */
 function campaignbyzone_link($zone_id, $campaign_id)
 {
   $curl = curl_init();
@@ -55,7 +65,12 @@ function campaignbyzone_link($zone_id, $campaign_id)
   echo $response;
 }
 
-// Link by zone and ad
+/**
+ * Links a zone to an ad in the ad server.
+ * @param int $ad_id The ID of the ad to link the zone to.
+ * @param int $zone_id The ID of the zone to link to the ad.
+ * @return void Outputs the API response.
+ */
 function zonebyad_link($ad_id, $zone_id)
 {
   $curl = curl_init();
@@ -82,7 +97,13 @@ function zonebyad_link($ad_id, $zone_id)
   curl_close($curl);
   echo $response;
 }
-// Link by zone and campaign
+
+/**
+ * Links a zone to a campaign in the ad server.
+ * @param int $campaign_id The ID of the campaign to link the zone to.
+ * @param int $zone_id The ID of the zone to link to the campaign.
+ * @return void Outputs the API response.
+ */
 function zonebycampaign_link($campaign_id, $zone_id)
 {
   $curl = curl_init();
@@ -110,7 +131,12 @@ function zonebycampaign_link($campaign_id, $zone_id)
   echo $response;
 }
 
-// Unlink by ad and zone 
+/**
+ * Unlinks a banner from a zone in the ad server.
+ * @param int $zone_id The ID of the zone to unlink the banner from.
+ * @param int $banner_id The ID of the banner to unlink from the zone.
+ * @return void Outputs the API response.
+ */
 function adbyzone_unlink($zone_id, $banner_id)
 {
   $curl = curl_init();
@@ -138,7 +164,12 @@ function adbyzone_unlink($zone_id, $banner_id)
   echo $response;
 }
 
-// Unlink by zone and ad
+/**
+ * Unlinks a zone from an ad in the ad server.
+ * @param int $ad_id The ID of the ad to unlink the zone from.
+ * @param int $zone_id The ID of the zone to unlink from the ad.
+ * @return void Outputs the API response.
+ */
 function zonebyad_unlink($ad_id, $zone_id)
 {
   $curl = curl_init();
@@ -166,7 +197,12 @@ function zonebyad_unlink($ad_id, $zone_id)
   echo $response;
 }
 
-// Unlink by zone and campaign
+/**
+ * Unlinks a zone from a campaign in the ad server.
+ * @param int $ad_id The ID of the campaign to unlink the zone from.
+ * @param int $zone_id The ID of the zone to unlink from the campaign.
+ * @return void Outputs the API response.
+ */
 function zonebycampaign_unlink($ad_id, $zone_id)
 {
   $curl = curl_init();
@@ -194,7 +230,11 @@ function zonebycampaign_unlink($ad_id, $zone_id)
   echo $response;
 }
 
-// Get Linked banners by zone 
+/**
+ * Retrieves linked banners for a specific zone.
+ * @param int $zone_id The ID of the zone to retrieve linked banners for.
+ * @return void Outputs the API response.
+ */
 function get_linked_banners($zone_id)
 {
   $curl = curl_init();
@@ -220,7 +260,11 @@ function get_linked_banners($zone_id)
   echo $response;
 }
 
-// Get Linked campaigns by zone 
+/**
+ * Retrieves linked zones for a specific campaign.
+ * @param int $campaign_id The ID of the campaign to retrieve linked zones for.
+ * @return void Outputs the API response.
+ */
 function get_campaign_linked_zones($campaign_id)
 {
   $curl = curl_init();
@@ -246,7 +290,11 @@ function get_campaign_linked_zones($campaign_id)
   echo $response;
 }
 
-// Get linkedn Zone by ad 
+/**
+ * Retrieves linked zones for a specific banner.
+ * @param int $banner_id The ID of the banner to retrieve linked zones for.
+ * @return void Outputs the API response.
+ */
 function get_linked_zones($banner_id)
 {
   $curl = curl_init();
@@ -272,7 +320,11 @@ function get_linked_zones($banner_id)
   echo $response;
 }
 
-// Get linked Zone by campaign 
+/**
+ * Retrieves linked campaigns for a specific zone.
+ * @param int $zone_id The ID of the zone to retrieve linked campaigns for.
+ * @return void Outputs the API response.
+ */
 function get_linked_campaigns($zone_id)
 {
   $curl = curl_init();

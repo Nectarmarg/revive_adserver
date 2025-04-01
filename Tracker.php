@@ -1,12 +1,16 @@
 <?php
 
-// Add tracker
-function add_tracker($client_id)
+/**
+ * Add a new tracker to the specified client/advertiser.
+ * @param int $advertiser_id The ID of the client/advertiser to which the tracker will be added.
+ * @return void Outputs the API response.
+ */
+function add_tracker($advertiser_id)
 {
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/add_tracker/$client_id",
+    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/add_tracker/$advertiser_id",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -35,7 +39,11 @@ function add_tracker($client_id)
   echo $response;
 }
 
-// Edit tracker
+/**
+ * Edit an existing tracker.
+ * @param int $tracker_id The ID of the tracker to be edited.
+ * @return void Outputs the API response.
+ */
 function edit_tracker($tracker_id)
 {
   $curl = curl_init();
@@ -71,7 +79,11 @@ function edit_tracker($tracker_id)
   echo $response;
 }
 
-// Delete tracker
+/**
+ * Delete a tracker.
+ * @param int $tracker_id The ID of the tracker to be deleted.
+ * @return void Outputs the API response.
+ */
 function delete_tracker($tracker_id)
 {
   $curl = curl_init();
@@ -97,7 +109,11 @@ function delete_tracker($tracker_id)
   echo $response;
 }
 
-// Get tracker
+/**
+ * Retrieve details of a specific tracker.
+ * @param int $tracker_id The ID of the tracker to retrieve.
+ * @return void Outputs the API response.
+ */
 function get_tracker($tracker_id)
 {
   $curl = curl_init();
@@ -123,13 +139,17 @@ function get_tracker($tracker_id)
   echo $response;
 }
 
-// Get tracker by advertiser
-function get_tracker_by_advertiser($client_id)
+/**
+ * Retrieve all trackers associated with a specific client/advertiser.
+ * @param int $advertiser_id The ID of the client/advertiser.
+ * @return void Outputs the API response.
+ */
+function get_tracker_by_advertiser($advertiser_id)
 {
   $curl = curl_init();
 
   curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/get_tracker_by_advertiser/$client_id",
+    CURLOPT_URL => "https://adserver.brainfoodhosting.gr/api/revive_ui/get_tracker_by_advertiser/$advertiser_id",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,

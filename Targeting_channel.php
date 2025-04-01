@@ -1,6 +1,10 @@
 <?php
 
-// Add targeting channel
+/**
+ * Add Targeting Channel inside the Agency
+ * @param int $agency_id The ID of the agency to which the targeting channel will be added.
+ * @return void Outputs the API response.
+ */
 function add_targeting_channel($agency_id)
 {
   $curl = curl_init();
@@ -34,7 +38,11 @@ function add_targeting_channel($agency_id)
   echo $response;
 }
 
-// Edit targeting channel
+/**
+ * Edit an existing Targeting Channel.
+ * @param int $channel_id The ID of the targeting channel to be edited.
+ * @return void Outputs the API response.
+ */
 function edit_targeting_channel($channel_id)
 {
   $curl = curl_init();
@@ -70,7 +78,11 @@ function edit_targeting_channel($channel_id)
   echo $response;
 }
 
-// Delete targeting channel
+/**
+ * Delete a Targeting Channel.
+ * @param int $channel_id The ID of the targeting channel to be deleted.
+ * @return void Outputs the API response.
+ */
 function deletechannel($channel_id)
 {
   $curl = curl_init();
@@ -96,7 +108,11 @@ function deletechannel($channel_id)
   echo $response;
 }
 
-// Get targeting channel
+/**
+ * Retrieve details of a Targeting Channel.
+ * @param int $channel_id The ID of the targeting channel to retrieve.
+ * @return void Outputs the API response.
+ */
 function gettargetingchannel($channel_id)
 {
   $curl = curl_init();
